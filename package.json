@@ -1,0 +1,15 @@
+{
+  "name": "https---github.com-gaborkadi-istvan_blocktest-invitations",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "Madarasz_Istvan_Pataky"
+  },
+  "author": "",
+  "license": "ISC"
+}
