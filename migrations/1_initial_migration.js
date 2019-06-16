@@ -1,5 +1,5 @@
 const Migrations = artifacts.require("./Migrations");
-const Catmoon = artifacts.require("./Catmoon_Token.sol");
+const ERC20 = artifacts.require("./ERC20.sol");
 //const SafeMath = artifacts.require("./math/SafeMath.sol");
 //const IERC20 = artifacts.require("./IERC20.sol");
 
@@ -11,7 +11,7 @@ module.exports = function(deployer) {
   deployer.deploy(SafeMath);
 };*/
 module.exports = function(deployer) {
-  deployer.deploy(Catmoon);
+  deployer.deploy(ERC20);
 };
 
 /*module.exports = function(deployer) {
