@@ -8,8 +8,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "Madarasz_Istvan_Pataky"
+    "url": "git+https://github.com/Madarasz-Istvan-Pataky/https---github.com-gaborkadi-istvan_blocktest-invitations.git"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Madarasz-Istvan-Pataky/https---github.com-gaborkadi-istvan_blocktest-invitations/issues"
+  },
+  "homepage": "https://github.com/Madarasz-Istvan-Pataky/https---github.com-gaborkadi-istvan_blocktest-invitations#readme"
 }
