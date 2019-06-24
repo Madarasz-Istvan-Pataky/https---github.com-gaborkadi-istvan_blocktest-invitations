@@ -4,9 +4,14 @@ import "./ERC20.sol";
 import "./ERC20Detailed.sol";
 import "./Roles/Pausable.sol";
 import "./Roles/WhiteListedRole.sol";
+import "./Ownable.sol";
 
-contract CatmoonToken is ERC20, ERC20Detailed, Pausable, WhitelistedRole{
+contract CatmoonToken is ERC20, ERC20Detailed, Pausable, WhitelistedRole, Ownable{
 //contract CatmoonToken is ERC20, Pausable, WhitelistedRole{
+
+    event Transfer(address indexed _from, address indexed _to, uint256 _value);
+
+  //  mapping(address => uint256) public balanceOf;
     constructor(
         string memory name,
         string memory symbol,
@@ -23,9 +28,10 @@ contract CatmoonToken is ERC20, ERC20Detailed, Pausable, WhitelistedRole{
     {
 
              }
- /*function transfer(address recipient, uint256 amount) public returns (bool) {
+ /*
+ function transfer(address recipient, uint256 amount) public returns (bool) {
                  _transfer(msg.sender, recipient, amount);
-                // ERC20.transfer();
+                 ERC20.transfer();
                  //override
                  //transfer nem hívható csak ha nem pause-beállítása
                  //transferfromra és approve-ra

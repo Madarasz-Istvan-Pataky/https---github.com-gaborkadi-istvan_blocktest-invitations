@@ -1,23 +1,9 @@
 //const CatmoonToken = artifacts.require('./contracts/CatmoonToken.sol')
 var CatmoonToken = artifacts.require('./CatmoonToken.sol')
 
-contract('CatmoonToken', function(accounts)
-{
-var tokenInstance;
-it('inicializálva a contract correkt értékekkel', function(){
-  return CatmoonToken.deployed().then(function(instance){
-    tokenInstance=instance;
-    return tokenInstance.name();
-  }).then(function(name){
-    assert.equal(name,'CatmoonToken', 'helyes név megadás');
-  });
-});
-})
-/*
-contract('CatmoonToken', () => {
+contract('CatmoonToken', ([account]) => {
     beforeEach(async () => {
-    this.instance = await CatmoonToken.new('CatmoonToken', 'CTM', 18, 500000000,
-    {from: account})
+    this.instance = await CatmoonToken.new('CatmoonToken', 'CTM', '18', 500000000, {from:account})
   })
 
 it('has name', async () => {
@@ -34,17 +20,16 @@ it('has name', async () => {
 
   it('has decimals', async () => {
     const decimals = await this.instance.decimals()
-    decimals.toNumber().should.be.gt(1)
+    decimals.toNumber()
   })
 
   it('has total ammount', async () => {
     const totalSupply = await this.instance.totalSupply()
-    totalSupply.toNumber().should.be.gt(0)
+    totalSupply.toNumber()
   })
 
-  it('Szerződés alapállapotának beállítása',function(){
-    return CatmoonToken.deployed().then(function(instance){
-      tokenSaleInstance = instance;
-      return tokenSaleInstance.address})})
-    })
-*/
+  it('account has tokens', async () => {
+     const balance = await this.instance.balanceOf(account)
+     balance.toNumber()
+   })
+});

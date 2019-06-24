@@ -6,7 +6,7 @@ contract CatmoonTokenSale{
   address admin;
   CatmoonToken public tokenContract;
   uint256 public tokenPrice;
-  mapping(address => uint256) public balanceOf;
+  
 
   constructor (CatmoonToken _tokenContract, uint256 _tokenPrice ) public {
     tokenContract = _tokenContract;

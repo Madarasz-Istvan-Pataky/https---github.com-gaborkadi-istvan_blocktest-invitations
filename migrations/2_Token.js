@@ -7,7 +7,7 @@ var ERC20 = artifacts.require("./ERC20.sol");
 
 
 module.exports = function(deployer){
-deployer.deploy(CatmoonToken,"CatmoonToken","CTM",18);
+deployer.deploy(CatmoonToken,'CatmoonToken','CTM','18');
 //deployer.deploy(ERC20,500000000*10**18);
 //deployer.deploy(CatmoonToken);
 
