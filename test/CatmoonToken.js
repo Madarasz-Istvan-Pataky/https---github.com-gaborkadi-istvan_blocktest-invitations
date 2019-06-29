@@ -1,13 +1,14 @@
 //const CatmoonToken = artifacts.require('./contracts/CatmoonToken.sol')
 const CatmoonToken = artifacts.require('./CatmoonToken.sol')
 const BigNumber = require('../node_modules/big-number/big-number.js')
+//const { expectThrow, expectEvent } = require('./helpers')
 //const BigNumber = require("./big-number.js")
 
 contract('CatmoonToken', ([account, secondAccount]) => {
     beforeEach(async () => {
       this.instance = await CatmoonToken.new('CatmoonToken', 'CTM', '18',500000000, {from:account})
 
-    //this.instance = await CatmoonToken.new('CatmoonToken', 'CTM', '18',new BigNumber(500000000*(10**18)), {from:account})
+  //  this.instance = await CatmoonToken.new('CatmoonToken', 'CTM', '18',new BigNumber(500000000*(10**18)), {from:account})
   })
 
 it('has an owner', async () => {
@@ -51,10 +52,13 @@ it('has name', async () => {
        const balanceSecond = await this.instance.balanceOf(secondAccount)
 
        const { logs } = await this.instance.transfer(secondAccount, 1, {from: account})
-       expectEvent(logs, 'Transfer', {
+       assert.web3Event(logs,{
+  //     expectEvent(logs, 'Transfer', {
+     event:'Transfer',
+     args:{
          from: account,
          to: secondAccount,
-         value: 1,
+         value: 1  }
         // pause: true
        })
      })
