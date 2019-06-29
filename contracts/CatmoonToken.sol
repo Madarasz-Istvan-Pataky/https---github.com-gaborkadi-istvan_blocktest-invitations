@@ -28,15 +28,26 @@ contract CatmoonToken is ERC20, ERC20Detailed, Pausable, WhitelistedRole, Ownabl
     {
 
              }
- /*
- function transfer(address recipient, uint256 amount) public returns (bool) {
-                 _transfer(msg.sender, recipient, amount);
-                 ERC20.transfer();
-                 //override
+
+ function transfer(address _recipient, uint256 _amount) public returns (bool) {
+          if(paused()){
+                 ERC20.transfer(_recipient, _amount);
+                      }     //override
                  //transfer nem hívható csak ha nem pause-beállítása
                  //transferfromra és approve-ra
                  //Ezután építhető be a whitelist
                  //Kiszórom a tokeneket, de nem tud a tulajdonosa kereskedni, csak később nyitom meg
              }
-*/
+function transferFrom(address _sender, address _recipient, uint256 _amount, bool _pause) public returns (bool) {
+       if(_pause){
+             ERC20.transferFrom(_sender, _recipient, _amount);
+              }
+            }
+
+function approve(address _spender, uint256 _value, bool _pause) public returns (bool) {
+  if(_pause){
+        ERC20.approve(_spender, _value);
+         }
+              }
+
 }

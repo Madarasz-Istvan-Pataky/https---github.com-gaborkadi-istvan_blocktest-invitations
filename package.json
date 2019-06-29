@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/Madarasz-Istvan-Pataky/https---github.com-gaborkadi-istvan_blocktest-invitations/issues"
   },
-  "homepage": "https://github.com/Madarasz-Istvan-Pataky/https---github.com-gaborkadi-istvan_blocktest-invitations#readme"
+  "homepage": "https://github.com/Madarasz-Istvan-Pataky/https---github.com-gaborkadi-istvan_blocktest-invitations#readme",
+  "dependencies": {
+    "big-number": "^2.0.0"
+  }
 }
